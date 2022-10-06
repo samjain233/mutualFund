@@ -23,8 +23,8 @@
         <label class="logo">DesignX</label>
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Stocks</a></li>
-            <li><a class="active" href="#">Mutual Fund</a></li>
+            <li><a href="/stock">Stocks</a></li>
+            <li><a class="active" href="/mutualfund">Mutual Fund</a></li>
             <li><a href="#">About</a></li>
         </ul>
         <section></section>
@@ -78,7 +78,7 @@
             </div>
             <div class="col-sm-8">
                 <div class="search jumbotron">
-                    <form action="/" method="post">
+                    <form action="/mutualfund" method="post">
                         <div class="form-group">
                             <label for="usr">Enter the </label>
                             <input type="text" class="form-control" id="usr" name="mutualFundId">
@@ -87,9 +87,14 @@
                     </form>
                 </div>
                 <div class="compare jumbotron">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat laborum nisi eum voluptates, neque
-                    dolor, laboriosam itaque recusandae incidunt consectetur at molestiae aspernatur. Id reiciendis
-                    officiis, minus hic doloribus rerum.
+                    <form action="/mutualfundcmp" method="post">
+                        <div class="form-group">
+                            <label for="usr">Compare Mutual Fund</label>
+                            <input type="text" class="form-control" id="usr" name="MFId1">
+                            <input type="text" class="form-control" id="usr" name="MFId2">
+                            <input type="submit" class="form-control">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

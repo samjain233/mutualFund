@@ -23,8 +23,8 @@
         <label class="logo">DesignX</label>
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a class="active" href="#">Stocks</a></li>
-            <li><a href="#">Mutual Fund</a></li>
+            <li><a class="active" href="/stock">Stocks</a></li>
+            <li><a href="/mutualfund">Mutual Fund</a></li>
             <li><a href="#">About</a></li>
         </ul>
         <section></section>
@@ -87,9 +87,14 @@
                     </form>
                 </div>
                 <div class="compare jumbotron">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat laborum nisi eum voluptates, neque
-                    dolor, laboriosam itaque recusandae incidunt consectetur at molestiae aspernatur. Id reiciendis
-                    officiis, minus hic doloribus rerum.
+                    <form action="/stockcmp" method="post">
+                        <div class="form-group">
+                            <label for="usr">Compare Stock</label>
+                            <input type="text" class="form-control" id="usr" name="StockId1">
+                            <input type="text" class="form-control" id="usr" name="StockId2">
+                            <input type="submit" class="form-control">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
