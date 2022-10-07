@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StockCompare</title>
+    <title>StockHome</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src='https://kit.fontawesome.com/2121515fbf.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="./navbar.css">
     <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./body.css">
 </head>
 
 <body>
@@ -20,9 +21,9 @@
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <label class="logo">DesignX</label>
+        <label class="logo">StockHome</label>
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/stock">Stocks</a></li>
             <li><a class="active" href="/mutualfund">Mutual Fund</a></li>
             <li><a href="#">About</a></li>
@@ -32,70 +33,23 @@
 
     <div class="body">
         <div class="container">
-            <div class="col-sm-4">
-                <div class="jumbotron">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae cumque magni obcaecati
-                    exercitationem, similique incidunt. Nulla consequuntur nemo quia doloribus reprehenderit soluta
-                    officiis culpa quisquam id et iste quis aperiam illo corrupti veritatis natus, distinctio error
-                    totam veniam. Quisquam ea in id esse recusandae iure vel, itaque quas magni ipsam, assumenda sunt
-                    reiciendis distinctio minima eaque iusto tempore ad! Illo architecto eaque iste velit maxime! Saepe
-                    deleniti rem, aut sapiente ullam at exercitationem corrupti fugit quo nulla? Ullam placeat quam
-                    veritatis deleniti dolorum fugit dolore. Voluptatum accusamus at, molestiae minima doloremque,
-                    excepturi laboriosam aut modi dolor ullam fugiat illum eos quibusdam veniam animi expedita itaque,
-                    ea magni. Nostrum esse aliquid est necessitatibus porro corrupti, voluptates, similique perspiciatis
-                    tenetur sit quidem quos culpa. Sunt quidem explicabo et dignissimos animi neque perferendis libero
-                    maiores qui sit praesentium, quas necessitatibus deleniti accusantium dolor, ducimus aspernatur
-                    voluptates rem impedit quibusdam eum consequatur quam ipsum eligendi? Ut nobis, quia eligendi
-                    repellat natus numquam nisi! Delectus magnam blanditiis voluptates. Vero assumenda praesentium fuga
-                    quaerat esse porro id obcaecati ullam dolorem nam. Deserunt similique veritatis explicabo? Impedit
-                    autem expedita unde dicta, ducimus vero minus? Ipsa, dolore consectetur? Necessitatibus reiciendis
-                    numquam et facilis distinctio porro quas voluptates dolor saepe veritatis a sit, suscipit illo omnis
-                    officiis cum, earum quam accusamus hic in iste. Voluptates quo officia debitis, maiores,
-                    reprehenderit quis eos aspernatur voluptatibus odio libero porro. Ipsam architecto vitae magni
-                    dolores quia! Provident dignissimos corporis vel quasi nemo cumque quis ab molestiae quia ad itaque
-                    rem illo inventore impedit ratione eaque, saepe ipsam earum optio incidunt voluptates. Sapiente
-                    suscipit neque vitae voluptatem atque vero consequatur sit officia adipisci cupiditate. Et sequi
-                    voluptates consequatur unde molestias rerum! Dignissimos, aliquid vel? Quo dolorem consectetur
-                    voluptatum? Consectetur perspiciatis inventore, asperiores voluptatibus sunt quam animi, odit iure,
-                    dolorum adipisci aliquid nemo deleniti repellat ab distinctio quos delectus vitae exercitationem
-                    ipsa? Officiis nulla adipisci tenetur repellat dicta omnis similique facere eligendi aspernatur
-                    placeat magni, facilis ipsa accusantium doloremque molestias enim minima repudiandae quo nihil
-                    praesentium libero autem magnam? Expedita veniam sapiente veritatis ex? Laboriosam illum officiis
-                    vel? Quas quibusdam impedit labore tenetur odit veritatis eos obcaecati nobis velit esse atque dolor
-                    debitis, molestias magnam beatae pariatur maiores. Temporibus, dolore eaque. Fuga, laudantium.
-                    Expedita omnis fugiat quo voluptatibus distinctio tempora illo quasi adipisci porro perspiciatis.
-                    Accusantium aperiam ducimus cumque totam pariatur ipsum adipisci corporis illum ad, amet eligendi
-                    quis saepe, consequatur aspernatur sequi aliquam sunt. Odit officia perferendis unde rem, quaerat
-                    aspernatur ad numquam nemo adipisci iste qui accusamus tempore alias beatae commodi nulla culpa!
-                    Repellat voluptate cumque magnam incidunt voluptates officiis, veniam iste voluptatibus vero
-                    corrupti debitis totam architecto eos tempora assumenda dolorum voluptas porro quam nulla! Incidunt
-                    cum eius magnam quos vero veritatis consectetur possimus eaque molestias est, autem eos earum
-                    aliquam eum excepturi alias nam dignissimos repellendus minus doloribus praesentium voluptas
-                    deleniti nulla dolore. Magnam quis cumque aspernatur numquam, unde ratione itaque possimus eius
-                    necessitatibus deleniti vero officiis culpa ex impedit quo debitis, incidunt, pariatur ducimus
-                    officia. Debitis, vel! Velit, similique.
-                </div>
+            <div class="search jumbotron">
+                <form action="/mutualfund" method="post">
+                    <div class="form-group">
+                        <label for="usr" style="font-size: 24px;">Search Mutual Fund</label>
+                        <input type="text" class="form-control" id="usr" name="mutualFundId">
+                        <input type="submit" class="form-control btn btn-primary" value="Search">
+                    </div>
+                </form>
             </div>
-            <div class="col-sm-8">
-                <div class="search jumbotron">
-                    <form action="/mutualfund" method="post">
-                        <div class="form-group">
-                            <label for="usr">Enter the </label>
-                            <input type="text" class="form-control" id="usr" name="mutualFundId">
-                            <input type="submit" class="form-control">
-                        </div>
-                    </form>
-                </div>
-                <div class="compare jumbotron">
-                    <form action="/mutualfundcmp" method="post">
-                        <div class="form-group">
-                            <label for="usr">Compare Mutual Fund</label>
-                            <input type="text" class="form-control" id="usr" name="MFId1">
-                            <input type="text" class="form-control" id="usr" name="MFId2">
-                            <input type="submit" class="form-control">
-                        </div>
-                    </form>
-                </div>
+            <div class="compare jumbotron">
+                <form action="/mutualfundcmp" method="post">
+                    <div class="form-group">
+                        <label for="usr" style="font-size: 24px;">Compare Mutual Fund</label>
+                        <input type="text" class="form-control" id="usr" name="MFId1">
+                        <input type="text" class="form-control" id="usr" name="MFId2">
+                        <input type="submit" class="form-control btn btn-primary" value="Compare">
+                    </div>
             </div>
         </div>
     </div>

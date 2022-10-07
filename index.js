@@ -14,6 +14,9 @@ app.use(express.static("public"));
 
 
 //routes-------------------------------------------------------------------------------
+app.get("/",function(req,res){
+    res.render("home.ejs");
+});
 
 //mutual fund ------------------------------------------------------------------------
 app.get("/mutualfund", function (req, res) {
@@ -77,7 +80,7 @@ app.post("/mutualfundcmp", function (req, res) {
 
                     const imgpath = "https://quickchart.io/chart?c={type:'line',data:{labels:['" + Datalist1[60].date + "','" + Datalist1[50].date + "', '" + Datalist1[40].date + "','" + Datalist1[30].date + "', '" + Datalist1[20].date + "','" + Datalist1[10].date + "','" + Datalist1[0].date + "',], datasets:[{label:'" + data1.meta.fund_house + "', data: [" + Datalist1[60].nav + "," + Datalist1[50].nav + "," + Datalist1[40].nav + "," + Datalist1[30].nav + "," + Datalist1[20].nav + "," + Datalist1[10].nav + "," + Datalist1[0].nav + "], fill:true,borderColor:'blue'},{label:'" + data2.meta.fund_house + "', data: [" + Datalist2[60].nav + "," + Datalist2[50].nav + "," + Datalist2[40].nav + "," + Datalist2[30].nav + "," + Datalist2[20].nav + "," + Datalist2[10].nav + "," + Datalist2[0].nav + "], fill:true,borderColor:'green'}]}}";
 
-                    res.render("mutualfundinfo.ejs", { imgpath: imgpath, metaData: metaData1 ,metaData2 : metaData2});
+                    res.render("mutualfundcmp.ejs", { imgpath: imgpath, metaData: metaData1 ,metaData2 : metaData2});
                 }
             });
         }
