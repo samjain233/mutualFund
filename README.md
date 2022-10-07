@@ -30,8 +30,8 @@
 </ul>
 <h2>Contributors</h2>
 <ul>
-  <li><a href="https://github.com/amansingh0811">Aman Singh</a></li>
   <li><a href="https://github.com/ishavishwakarma29">Isha Vishwakarma</a></li>
+  <li><a href="https://github.com/amansingh0811">Aman Singh</a></li>
   <li><a href="https://github.com/samjain233">Sambhav Jain</a></li>
 </ul>
 
