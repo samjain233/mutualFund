@@ -13,7 +13,21 @@
   <li>Open the terminal and write the command <strong> git clone https://github.com/samjain233/mutualFund </strong> </li>
   <li>After cloning the project , write <strong>npm i </strong>to install the node modules </li>
   <li>Then type <strong>node index.js </strong>, after that you can view this project on<strong> http://localhost:3000/ </strong> </li>
- </ul>
+</ul>
+<h2>Tech Stacks</h2>
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>Javascript</li>
+  <li>Bootstrap</li>
+  <li>NodeJs</li>
+</ul>
+<h2>API Used</h2>
+<ul>
+  <li><a href="https://www.alphavantage.co/">https://www.alphavantage.co/</a></li>
+  <li><a href="https://www.mfapi.in/">https://www.mfapi.in/</a></li>
+  <li><a href="https://quickchart.io/">https://quickchart.io/</a></li>
+</ul>
 <h2>Contributors</h2>
 <ul>
   <li><a href="https://github.com/amansingh0811">Aman Singh</a></li>
