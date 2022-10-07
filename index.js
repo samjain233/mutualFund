@@ -20,7 +20,7 @@ var symbol = [{name: 'tesco plc', symbol: 'TSCO.LON'},
               {name: 'tesla', symbol: 'TSLA'},
               {name: 'tata motors', symbol: 'TATAMOTORS.BSE'},
               {name: 'google', symbol: 'GOOGL'},
-              {name: 'apple', symbol: 'APPL'}]
+              {name: 'apple', symbol: 'AAPL'}]
 
 //middlewares
 const app = express();
