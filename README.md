@@ -12,5 +12,5 @@
   <li>First fork this project <mark>https://github.com/samjain233/mutualFund</mark> </li>
   <li>Open the terminal and write the command <strong> git clone https://github.com/samjain233/mutualFund </strong> </li>
   <li>After cloning the project , write <strong>npm i </strong>to install the node modules </li>
-  <li>Then type <strong>node index.js </strong>, after that you can view this project on<strong> http://localhost:3000/ </strong> <li>
+  <li>Then type <strong>node index.js </strong>, after that you can view this project on<strong> http://localhost:3000/ </strong> </li>
  </ul>
