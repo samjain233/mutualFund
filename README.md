@@ -3,3 +3,8 @@
 <p>This project helps to search stock and mutual fund details , when a user enters the details of stock or any mutual fund it will returns the graph and other details of the query . We can also compare two stocks and mutual fund , when user compare any two stock or fund this web app will return a comparison graph .</p>
 <h2>Gallery</h2>
 <img src="displayimg/1.png">
+<img src="displayimg/2.png">
+<img src="displayimg/3.png">
+<img src="displayimg/4.png">
+<img src="displayimg/5.png">
+
