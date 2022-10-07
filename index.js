@@ -14,7 +14,7 @@ app.use(express.static("public"));
 
 
 //routes-------------------------------------------------------------------------------
-app.get("/",function(req,res){
+app.get("/", function (req, res) {
     res.render("home.ejs");
 });
 
@@ -24,26 +24,66 @@ app.get("/mutualfund", function (req, res) {
 });
 
 app.post("/mutualfund", function (req, res) {
-    const mutualFundID = req.body.mutualFundId;
-    const url = "https://api.mfapi.in/mf/" + mutualFundID;
-    console.log(url);
-    request.get({
-        url: url,
-        json: true,
-        headers: { 'User-Agent': 'request' }
-    }, (err, response, data) => {
-        if (err) {
-            console.log('Error:', err);
-        } else if (response.statusCode !== 200) {
-            console.log('Status:', response.statusCode);
-        } else {
-            const Datalist = data.data;
-            const metaData = data.meta;
-            console.log(metaData);
-            const imgpath = "https://quickchart.io/chart?c={type:'line',data:{labels:['" + Datalist[60].date + "','" + Datalist[50].date + "', '" + Datalist[40].date + "','" + Datalist[30].date + "', '" + Datalist[20].date + "','" + Datalist[10].date + "','" + Datalist[0].date + "',], datasets:[{label:'" + data.meta.fund_house + "', data: [" + Datalist[60].nav + "," + Datalist[50].nav + "," + Datalist[40].nav + "," + Datalist[30].nav + "," + Datalist[20].nav + "," + Datalist[10].nav + "," + Datalist[0].nav + "], fill:true,borderColor:'blue'}]}}";
-            res.render("mutualfundinfo.ejs", { imgpath: imgpath, metaData: metaData });
-        }
-    });
+    let mutualFundID = req.body.mutualFundId;
+    if (typeof mutualFundID != Number) {
+        const url0 = "https://api.mfapi.in/mf";
+        console.log(url0);
+        request.get({
+            url: url0,
+            json: true,
+            headers: { 'User-Agent': 'request' }
+        }, (err, response, data) => {
+            if (err) {
+                console.log('Error:', err);
+            } else if (response.statusCode !== 200) {
+                console.log('Status:', response.statusCode);
+            } else {
+                let obj = data.find((mf) => mf.schemeName == mutualFundID);
+                // console.log(obj);
+                mutualFundID= obj.schemeCode;
+                const url = "https://api.mfapi.in/mf/" + mutualFundID;
+                console.log(url);
+                request.get({
+                    url: url,
+                    json: true,
+                    headers: { 'User-Agent': 'request' }
+                }, (err, response, data) => {
+                    if (err) {
+                        console.log('Error:', err);
+                    } else if (response.statusCode !== 200) {
+                        console.log('Status:', response.statusCode);
+                    } else {
+                        const Datalist = data.data;
+                        const metaData = data.meta;
+                        console.log(metaData);
+                        const imgpath = "https://quickchart.io/chart?c={type:'line',data:{labels:['" + Datalist[60].date + "','" + Datalist[50].date + "', '" + Datalist[40].date + "','" + Datalist[30].date + "', '" + Datalist[20].date + "','" + Datalist[10].date + "','" + Datalist[0].date + "',], datasets:[{label:'" + data.meta.fund_house + "', data: [" + Datalist[60].nav + "," + Datalist[50].nav + "," + Datalist[40].nav + "," + Datalist[30].nav + "," + Datalist[20].nav + "," + Datalist[10].nav + "," + Datalist[0].nav + "], fill:true,borderColor:'blue'}]}}";
+                        res.render("mutualfundinfo.ejs", { imgpath: imgpath, metaData: metaData });
+                    }
+                });
+            }
+        });
+    }
+    else {
+        const url = "https://api.mfapi.in/mf/" + mutualFundID;
+        console.log(url);
+        request.get({
+            url: url,
+            json: true,
+            headers: { 'User-Agent': 'request' }
+        }, (err, response, data) => {
+            if (err) {
+                console.log('Error:', err);
+            } else if (response.statusCode !== 200) {
+                console.log('Status:', response.statusCode);
+            } else {
+                const Datalist = data.data;
+                const metaData = data.meta;
+                console.log(metaData);
+                const imgpath = "https://quickchart.io/chart?c={type:'line',data:{labels:['" + Datalist[60].date + "','" + Datalist[50].date + "', '" + Datalist[40].date + "','" + Datalist[30].date + "', '" + Datalist[20].date + "','" + Datalist[10].date + "','" + Datalist[0].date + "',], datasets:[{label:'" + data.meta.fund_house + "', data: [" + Datalist[60].nav + "," + Datalist[50].nav + "," + Datalist[40].nav + "," + Datalist[30].nav + "," + Datalist[20].nav + "," + Datalist[10].nav + "," + Datalist[0].nav + "], fill:true,borderColor:'blue'}]}}";
+                res.render("mutualfundinfo.ejs", { imgpath: imgpath, metaData: metaData });
+            }
+        });
+    }
 });
 
 
@@ -80,7 +120,7 @@ app.post("/mutualfundcmp", function (req, res) {
 
                     const imgpath = "https://quickchart.io/chart?c={type:'line',data:{labels:['" + Datalist1[60].date + "','" + Datalist1[50].date + "', '" + Datalist1[40].date + "','" + Datalist1[30].date + "', '" + Datalist1[20].date + "','" + Datalist1[10].date + "','" + Datalist1[0].date + "',], datasets:[{label:'" + data1.meta.fund_house + "', data: [" + Datalist1[60].nav + "," + Datalist1[50].nav + "," + Datalist1[40].nav + "," + Datalist1[30].nav + "," + Datalist1[20].nav + "," + Datalist1[10].nav + "," + Datalist1[0].nav + "], fill:true,borderColor:'blue'},{label:'" + data2.meta.fund_house + "', data: [" + Datalist2[60].nav + "," + Datalist2[50].nav + "," + Datalist2[40].nav + "," + Datalist2[30].nav + "," + Datalist2[20].nav + "," + Datalist2[10].nav + "," + Datalist2[0].nav + "], fill:true,borderColor:'green'}]}}";
 
-                    res.render("mutualfundcmp.ejs", { imgpath: imgpath, metaData: metaData1 ,metaData2 : metaData2});
+                    res.render("mutualfundcmp.ejs", { imgpath: imgpath, metaData: metaData1, metaData2: metaData2 });
                 }
             });
         }
