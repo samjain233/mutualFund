@@ -10,3 +10,7 @@
 <h2>How to install into your local pc</h2>
 <ul>
   <li>First fork this project <mark>https://github.com/samjain233/mutualFund</mark> </li>
+  <li>Open the terminal and write the command <span> git clone https://github.com/samjain233/mutualFund </span> </li>
+  <li>After cloning the project , write npm i to install the node modules </li>
+  <li>Then type node index.js , after that you can view this project on http://localhost:3000/ <li>
+ </ul>
