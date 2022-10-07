@@ -9,4 +9,4 @@
 <img src="displayimg/5.png">
 <h2>How to install into your local pc</h2>
 <ul>
-  <li>First fork this project <mark>https://github.com/samjain233/mutualFund/edit/master/README.md</mark> </li>
+  <li>First fork this project <mark>https://github.com/samjain233/mutualFund</mark> </li>
