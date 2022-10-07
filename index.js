@@ -3,8 +3,24 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 var request = require('request');
-
-
+const _ = require('lodash');
+var symbol = [{name: 'tesco plc', symbol: 'TSCO.LON'},
+              {name: 'ibm', symbol: 'IBM'},
+              {name: 'Shopify inc', symbol: 'SHOP.TRT'},
+              {name: 'green power motor company inc', symbol: 'GPV.TRV'},
+              {name: 'daimler ag', symbol: 'DAI.DEX'},
+              {name: 'saic motor corporation ', symbol: '600104.SHH'},
+              {name: 'china vanke company ltd ', symbol: '000002.SHZ'},
+              {name: 'microsoft', symbol: 'MFST'},
+              {name: 'reliance', symbol: 'RELIANCE.BSE'},
+              {name: 'alibaba group holding limited', symbol: 'BABA'},
+              {name: 'bank of america', symbol: 'BAC'},
+              {name: 'tencent holdings', symbol: 'NNND.FRK'},
+              {name: 'amazon', symbol: 'AMZN'},
+              {name: 'tesla', symbol: 'TSLA'},
+              {name: 'tata motors', symbol: 'TATAMOTORS.BSE'},
+              {name: 'google', symbol: 'GOOGL'},
+              {name: 'apple', symbol: 'APPL'}]
 
 //middlewares
 const app = express();
@@ -139,8 +155,10 @@ app.get("/stock", function (req, res) {
 
 app.post("/stock", function (req, res) {
     const stockId = req.body.StockId;
-    const url = "https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=" + stockId + "&apikey=EFMLDJZVJH1P7Y3C";
-    const secondUrl = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" + stockId + "&apikey=EFMLDJZVJH1P7Y3C";
+    const obj = symbol.find(o => o.name === _.lowerCase(stockId));
+    // console.log(obj.symbol);
+    const url = "https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=" + obj.symbol + "&apikey=EFMLDJZVJH1P7Y3C";
+    const secondUrl = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" + obj.symbol + "&apikey=EFMLDJZVJH1P7Y3C";
     request.get({
         url: url,
         json: true,
@@ -177,9 +195,11 @@ app.post("/stock", function (req, res) {
 
 app.post("/stockcmp", function (req, res) {
     const stockId1 = req.body.StockId1;
+    const obj1 = symbol.find(o => o.name === _.lowerCase(stockId1));
     const stockId2 = req.body.StockId2;
-    const url1 = "https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=" + stockId1 + "&apikey=EFMLDJZVJH1P7Y3C";
-    const url2 = "https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=" + stockId2 + "&apikey=EFMLDJZVJH1P7Y3C";
+    const obj2 = symbol.find(o => o.name === _.lowerCase(stockId2));
+    const url1 = "https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=" + obj1.symbol + "&apikey=EFMLDJZVJH1P7Y3C";
+    const url2 = "https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=" + obj2.symbol + "&apikey=EFMLDJZVJH1P7Y3C";
 
     request.get({
         url: url1,
