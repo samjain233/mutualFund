@@ -14,3 +14,7 @@
   <li>After cloning the project , write <strong>npm i </strong>to install the node modules </li>
   <li>Then type <strong>node index.js </strong>, after that you can view this project on<strong> http://localhost:3000/ </strong> </li>
  </ul>
+<h2>Contributors</h2>
+<a href="https://github.com/samjain233">Sambhav Jain</a>
+<a href="">Isha Vishwakarma</a>
+<a href="">Aman Singh</a>
